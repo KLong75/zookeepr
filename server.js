@@ -4,17 +4,17 @@ const express = require('express');
 const app = express();
 
 function filterByQuery(query, animalsArray) {
-  let personalityTraitsArray = [];
-  // Note that we save the animalsArray as filteredResults here:
-  let filteredResults = animalsArray;
-  if (query.personalityTraits) {
-    // Save persoanlityTraits as a dedicated array
-    // If persoanlityTraits is a string, place it into a new array and save.
-    if (typeof query.personalityTraits === 'string') {
-      personalityTraitsArray = [query.personalityTraits];
-    } else {
-      personalityTraitsArray = query.personalityTraits;
-    }
+    let personalityTraitsArray = [];
+    // Note that we save the animalsArray as filteredResults here:
+    let filteredResults = animalsArray;
+    if (query.personalityTraits) {
+      // Save persoanlityTraits as a dedicated array
+      // If persoanlityTraits is a string, place it into a new array and save.
+      if (typeof query.personalityTraits === 'string') {
+        personalityTraitsArray = [query.personalityTraits];
+      } else {
+        personalityTraitsArray = query.personalityTraits;
+      }
 
     // Loop through each trait in personalityTraits array:
     personalityTraitsArray.forEach(trait => {
